@@ -89,11 +89,9 @@ const zooAnimals = [
   The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
   */
   function USApop(zooAnimals){
-    let population = zooAnimals.population.reduce(function(sum, num){
-      return sum
-    })
-  }
-  
+   
+    
+}
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
     * Create a higher-order function named consume with 3 parameters: a, b and cb
@@ -109,9 +107,7 @@ const zooAnimals = [
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Create a function named add that returns the sum of two numbers 🦁🦁🦁
   
- function add(consumeCB) {
-   this.a = consumeCB.a
-   this.b = consumeCB.b
+ function add(a, b) {
    return a + b
   }
 
@@ -153,9 +149,8 @@ function CuboidMaker(attributes) {
   Create a method using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
 
-  CuboidMaker.prototype.volume = function (length, width, height) {
-    const volume = length * width * height
-    return volume
+  CuboidMaker.prototype.volume = function() {
+    return this.length * this.width * this.height
   }
 
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
@@ -163,9 +158,8 @@ function CuboidMaker(attributes) {
   Formula for cuboid surface area of a cube: 
   2 * (length * width + length * height + width * height)  */
 
-  CuboidMaker.prototype.surfaceArea = function (length, width, height) {
-    const surfaceArea = 2 * (length * width + length * height + width * height)
-    return surfaceArea
+  CuboidMaker.prototype.surfaceArea = function() {
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)
   }
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
@@ -189,11 +183,11 @@ class CuboidMakerTwo{
   this.width = attributes.width
   this.height = attributes.height
   }
-  volume(length, width, height) {
-    length * width * height
+  volume() {
+    return this.length * this.width * this.height
   }
-  surfaceArea(length, width, height) {
-    return 2 * (length * width + length * height + width * height)
+  surfaceArea() {
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)
   }
 }
 
