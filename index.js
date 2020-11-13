@@ -167,7 +167,7 @@ function CuboidMaker(attributes) {
   Create a cuboid object that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
-  const cuboid = new CuboidMaker(4, 5, 5)
+  const cuboid = Object.create({ength: 4, width: 5, height: 5})
   
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
@@ -178,7 +178,17 @@ function CuboidMaker(attributes) {
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+  constructor(attributes) {
+  this.length = attributes.length
+  this.width = attributes.width
+  this.height = attributes.height
+  }
+  volume(length, width, height) {
+    length * width * height
+  }
+  surfaceArea(length, width, height) {
+    return 2 * (length * width + length * height + width * height)
+  }
 }
 
 
