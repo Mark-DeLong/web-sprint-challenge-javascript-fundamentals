@@ -54,11 +54,13 @@ const zooAnimals = [
   The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
   */
   function animalNames(zooAnimals){
-    const names = zooAnimals.forEach(function(item) {
-      let array = []
-      return array.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}`)
+    const all = []
+    zooAnimals.forEach(function(zooAnimals) {
+        all.push(`name: ${zooAnimals.animal_name}, scientific: ${zooAnimals.scientific_name}`)
     })
-  }
+    return all
+}
+
 
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -90,8 +92,8 @@ const zooAnimals = [
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
   */
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(zooAnimals){
+    let population = zooAnimals.population.reduce((something, accumulator) => something + accumulator, 0)
   }
   
   
@@ -103,8 +105,8 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(a, b, callback){
-    return callback(a, b)
+  function consume(a, b, cb){
+    
   }
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
