@@ -61,8 +61,6 @@ const zooAnimals = [
     return all
 }
 
-
-
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
   */
@@ -87,15 +85,14 @@ const zooAnimals = [
     return lowPopulationAnimals
   }
   
-  
-
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
   */
   function USApop(zooAnimals){
-    let population = zooAnimals.population.reduce((something, accumulator) => something + accumulator, 0)
+    let population = zooAnimals.population.reduce(function(sum, num){
+      return sum
+    })
   }
-  
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
