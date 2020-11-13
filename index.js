@@ -103,24 +103,26 @@ const zooAnimals = [
   */
 
   function consume(a, b, cb){
-    
-  }
+      return cb(a, b)
+    }
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Create a function named add that returns the sum of two numbers 🦁🦁🦁
   
- function add(a, b, callback){
-    return callback(a, b)
+ function add(consumeCB) {
+   this.a = consumeCB.a
+   this.b = consumeCB.b
+   return a + b
   }
 
 // 🦁🦁🦁 Create a function named multiply that returns the product of two numbers 🦁🦁🦁
-  function multiply(/*Your Code Here */){
-   /*Your Code Here */
+  function multiply(a, b) {
+    return a * b
   }
 
  // 🦁🦁🦁 Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!" 🦁🦁🦁
-  function greeting(/*Your Code Here */){
-   return /*Your Code Here */
+  function greeting(a, b) {
+    return `Hello ${a} ${b}, nice to meet you!`
   }
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
@@ -180,6 +182,7 @@ function CuboidMaker(attributes) {
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
+
 class CuboidMakerTwo{
   constructor(attributes) {
   this.length = attributes.length
@@ -193,7 +196,6 @@ class CuboidMakerTwo{
     return 2 * (length * width + length * height + width * height)
   }
 }
-
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
 // console.log(cuboidTwo.volume()); // 100
