@@ -66,7 +66,9 @@ const zooAnimals = [
   */
   function lowerCaseNames(zooAnimals){
     const lowCaseAnimalNames = zooAnimals.map(function(zooAnimals) {
-      return `${zooAnimals.animal_name}`
+      let name = `${zooAnimals.animal_name}`
+      let lCase = name.toLowerCase()
+      return `${lCase}`
     })
     return lowCaseAnimalNames
   }
