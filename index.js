@@ -32,7 +32,7 @@ function summation(num) {
   return num1
   }
 
-summation(4)
+
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -53,21 +53,24 @@ const zooAnimals = [
   /* 🦁🦁🦁 Request 1: .forEach() 🦁🦁🦁
   The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
   */
-  function animalNames(item, index){
-    // let names = []
-    // names.forEach(fuction(item, index) {
-    //   names.push(`Names: ${item[index]}, ${item[index]}`)
-    // })
-  
-}
-  
+  function animalNames(zooAnimals){
+    const names = zooAnimals.forEach(function(item) {
+      let array = []
+      return array.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}`)
+    })
+  }
+
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
   */
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(zooAnimals){
+    const lowCaseAnimalNames = zooAnimals.map(function(zooAnimals) {
+      return `${zooAnimals.animal_name}`
+    })
+    return lowCaseAnimalNames
   }
+  
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -101,10 +104,8 @@ const zooAnimals = [
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Create a function named add that returns the sum of two numbers 🦁🦁🦁
   
- function add(aCB, bCB){
-    const add = function(aCB, bCB) {
-      return aCB + bCB
-    }
+ function add(a, b, callback){
+    return callback(a, b)
   }
 
 // 🦁🦁🦁 Create a function named multiply that returns the product of two numbers 🦁🦁🦁
@@ -141,14 +142,13 @@ function CuboidMaker(attributes) {
   this.height = attributes.height
 }
 
-
-
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
 
   CuboidMaker.prototype.volume = function (length, width, height) {
-    return length * width * height
+    const volume = length * width * height
+    return volume
   }
 
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
@@ -157,17 +157,15 @@ function CuboidMaker(attributes) {
   2 * (length * width + length * height + width * height)  */
 
   CuboidMaker.prototype.surfaceArea = function (length, width, height) {
-    return 2 * (length * width + length * height + width * height)
+    const surfaceArea = 2 * (length * width + length * height + width * height)
+    return surfaceArea
   }
-
-
-
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create a cuboid object that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
-  const cuboid = Object.create({ength: 4, width: 5, height: 5})
+  const cuboid = new CuboidMaker(4, 5, 5)
   
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
